@@ -1,5 +1,4 @@
-# Dragons and Dungeons
-
+# Dungeons and Dragons
 from random import randint
 from time import sleep
 # Modules imported
