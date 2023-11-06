@@ -1,5 +1,4 @@
 #Guess The Number Game
-
 from random import randint
 # random module to generate random integer between 1 and 10
 secret_num = randint(1,10)
@@ -7,12 +6,13 @@ num_of_guesses, max_guesses = 0, 3
 # globally declared variables to control flow of program
 def hello():
     name = input('Hello! What should I call you? : ')
-    choice = input(f'Nice to meet you {name}! Wanna guess the number hidden here \'##\' ? [Y/n]: ')
+    choice = input(f'Nice to meet you {name}! Wanna guess the number hidden here \'##\' ? [Y/n] : ')
     if choice != 'Y' and choice != 'y' and choice != '':
         print(f'Hope to see you again {name}.')
-        return EXIT
-    print('Here\'s a hint: the secret number lies between 1 and 10.')
-    return name
+        return ""
+    else:
+        print('Here\'s a hint: the secret number lies between 1 and 10.')
+        return name
 # name input and greeting ends
 def guess_num():
     global secret_num, num_of_guesses, max_guesses
@@ -47,6 +47,8 @@ def final_message(name):
 # final message ends
 def main():
     name = hello()
+    if name == "":
+        return
     guess_num()
     final_message(name)
 # main module ends
